@@ -1,0 +1,18 @@
+<h1>This is your result:</h1>
+
+<%# if in the grid %>
+<% if @grid_safe %>
+    <%# if the word is found (@found == true) %>
+    <% if @found %>
+        <p>Congrats! <%= @word %> is a word.</p>
+    <%# if the word is not found (@found == false) %>
+    <% else %>
+        <p>Sorry. <%= @word %> is not an English word.</p>
+    <% end %>
+<%# not in the grid %>
+<% else %>
+    <p>Word is not in the grid. :(</p>
+<% end %>
+
+<%= link_to 'Play Again', new_path %>
+
